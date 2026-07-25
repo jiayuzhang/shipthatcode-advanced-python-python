@@ -1,0 +1,46 @@
+{
+  "course": "advanced-python",
+  "language": "python",
+  "language_id": 71,
+  "entrypoint": "main.py",
+  "version": 1,
+  "content_hash": "915ca87624459dab",
+  "lessons": [
+    {
+      "slug": "classes-and-objects",
+      "tests_hash": "3cb3eae6fe7b"
+    },
+    {
+      "slug": "inheritance-and-polymorphism",
+      "tests_hash": "d1dfa5e1d159"
+    },
+    {
+      "slug": "special-methods",
+      "tests_hash": "d42ae5119ad2"
+    },
+    {
+      "slug": "generators-and-yield",
+      "tests_hash": "fee81acde1a3"
+    },
+    {
+      "slug": "generator-expressions",
+      "tests_hash": "a35a6c2d3385"
+    },
+    {
+      "slug": "function-decorators",
+      "tests_hash": "2122c9b159f6"
+    },
+    {
+      "slug": "regular-expressions",
+      "tests_hash": "45db94e6d6ba"
+    },
+    {
+      "slug": "working-with-json",
+      "tests_hash": "91e1d3df53b7"
+    },
+    {
+      "slug": "putting-it-all-together",
+      "tests_hash": "514b509a586c"
+    }
+  ]
+}
