@@ -77,17 +77,20 @@
 # print(v1 + v2)
 
 
-limit = int(input())
+# limit = int(input())
 
 
-def fibonacci(limit):
-    prev = 1
-    cur = 0
-    while cur < limit:
-        yield cur
-        tmp = cur
-        cur = prev + cur
-        prev = tmp
+# def fibonacci(limit):
+#     prev = 1
+#     cur = 0
+#     while cur < limit:
+#         yield cur
+#         tmp = cur
+#         cur = prev + cur
+#         prev = tmp
 
 
-print(" ".join(map(str, fibonacci(limit))))
+# print(" ".join(map(str, fibonacci(limit))))
+
+n = int(input())
+print(sum(x**2 for x in range(1, n + 1)))
