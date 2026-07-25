@@ -58,20 +58,36 @@
 # print(shape.area())
 
 
-class Vector:
-    def __init__(self, x, y):
-        self.x = int(x)
-        self.y = int(y)
+# class Vector:
+#     def __init__(self, x, y):
+#         self.x = int(x)
+#         self.y = int(y)
 
-    def __add__(self, other):
-        return Vector(self.x + other.x, self.y + other.y)
+#     def __add__(self, other):
+#         return Vector(self.x + other.x, self.y + other.y)
 
-    def __repr__(self):
-        return f"Vector({self.x}, {self.y})"
+#     def __repr__(self):
+#         return f"Vector({self.x}, {self.y})"
 
 
-x1, y1 = input().split()
-x2, y2 = input().split()
-v1 = Vector(x1, y1)
-v2 = Vector(x2, y2)
-print(v1 + v2)
+# x1, y1 = input().split()
+# x2, y2 = input().split()
+# v1 = Vector(x1, y1)
+# v2 = Vector(x2, y2)
+# print(v1 + v2)
+
+
+limit = int(input())
+
+
+def fibonacci(limit):
+    prev = 1
+    cur = 0
+    while cur < limit:
+        yield cur
+        tmp = cur
+        cur = prev + cur
+        prev = tmp
+
+
+print(" ".join(map(str, fibonacci(limit))))
