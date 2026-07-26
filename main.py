@@ -95,26 +95,38 @@
 # n = int(input())
 # print(sum(x**2 for x in range(1, n + 1)))
 
-from functools import wraps
+# from functools import wraps
 
 
-a = int(input())
-b = int(input())
+# a = int(input())
+# b = int(input())
 
 
-def logged(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        res = func(*args, **kwargs)
-        print(f"called {func.__name__}: {res}")
-        return res
+# def logged(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         res = func(*args, **kwargs)
+#         print(f"called {func.__name__}: {res}")
+#         return res
 
-    return wrapper
-
-
-@logged
-def add(a, b):
-    return a + b
+#     return wrapper
 
 
-add(a, b)
+# @logged
+# def add(a, b):
+#     return a + b
+
+
+# add(a, b)
+
+import re
+
+
+n = int(input())
+pattern = r"[^@\s]+@[^@\s]+\.[^@\s]+"
+for _ in range(n):
+    text = input()
+    if re.fullmatch(pattern, text):
+        print("valid")
+    else:
+        print("invalid")
