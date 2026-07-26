@@ -131,10 +131,39 @@
 #     else:
 #         print("invalid")
 
-import json
+# import json
 
-try:
-    data = json.loads(input())
-    print(data.get("name", "not found"))
-except json.JSONDecodeError:
-    print("invalid json")
+# try:
+#     data = json.loads(input())
+#     print(data.get("name", "not found"))
+# except json.JSONDecodeError:
+#     print("invalid json")
+
+import sys
+
+inventory: dict[str, int] = {}
+for line in sys.stdin:
+    parts = line.strip().split()
+    cmd = parts[0]
+    if cmd == "add":
+        item, quantity = parts[1], int(parts[2])
+        inventory[item] = inventory.get(item, 0) + quantity
+    elif cmd == "remove":
+        item, quantity = parts[1], int(parts[2])
+        if not item in inventory:
+            print("error: not found")
+        elif inventory[item] < quantity:
+            print("error: insufficient")
+        else:
+            inventory[item] -= quantity
+            if inventory[item] == 0:
+                del inventory[item]
+    elif cmd == "search":
+        item = parts[1]
+        print(inventory.get(item, 0))
+    elif cmd == "list":
+        if not inventory:
+            print("empty")
+        else:
+            for k in sorted(inventory.keys()):
+                print(f"{k}: {inventory[k]}")
