@@ -92,5 +92,29 @@
 
 # print(" ".join(map(str, fibonacci(limit))))
 
-n = int(input())
-print(sum(x**2 for x in range(1, n + 1)))
+# n = int(input())
+# print(sum(x**2 for x in range(1, n + 1)))
+
+from functools import wraps
+
+
+a = int(input())
+b = int(input())
+
+
+def logged(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        res = func(*args, **kwargs)
+        print(f"called {func.__name__}: {res}")
+        return res
+
+    return wrapper
+
+
+@logged
+def add(a, b):
+    return a + b
+
+
+add(a, b)
