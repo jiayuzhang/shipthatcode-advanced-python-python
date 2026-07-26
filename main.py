@@ -1,3 +1,4 @@
+from __future__ import annotations
 # class BankAccount:
 #     def __init__(self):
 #         self.balance = 0
