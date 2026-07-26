@@ -119,14 +119,22 @@
 
 # add(a, b)
 
-import re
+# import re
 
 
-n = int(input())
-pattern = r"[^@\s]+@[^@\s]+\.[^@\s]+"
-for _ in range(n):
-    text = input()
-    if re.fullmatch(pattern, text):
-        print("valid")
-    else:
-        print("invalid")
+# n = int(input())
+# pattern = r"[^@\s]+@[^@\s]+\.[^@\s]+"
+# for _ in range(n):
+#     text = input()
+#     if re.fullmatch(pattern, text):
+#         print("valid")
+#     else:
+#         print("invalid")
+
+import json
+
+try:
+    data = json.loads(input())
+    print(data.get("name", "not found"))
+except json.JSONDecodeError:
+    print("invalid json")
